@@ -1,0 +1,119 @@
+/* ========================================================
+   PRINT STYLESHEET - SISTEM PARKIR
+   Handles Thermal Ticket Printing & Official Report A4 Print
+   ======================================================== */
+
+@media print {
+  /* Sembunyikan semua elemen layout saat print */
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .sidebar,
+  .topbar,
+  .btn,
+  .modal-footer,
+  .btn-close-modal,
+  .quick-role-bar,
+  #toast-container,
+  .form-group,
+  .filter-bar,
+  .card-header,
+  .page-title-top {
+    display: none !important;
+  }
+
+  .main-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .page-container {
+    padding: 0 !important;
+  }
+
+  /* Mode Cetak Struk / Karcis Thermal */
+  body.printing-receipt .modal-overlay {
+    position: static !important;
+    background: transparent !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    padding: 0 !important;
+  }
+
+  body.printing-receipt .modal-box {
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.printing-receipt .modal-header {
+    display: none !important;
+  }
+
+  body.printing-receipt .modal-body {
+    padding: 0 !important;
+  }
+
+  body.printing-receipt .thermal-receipt {
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 80mm !important;
+    width: 80mm !important;
+    margin: 0 auto !important;
+    padding: 10px 0 !important;
+    font-size: 12px !important;
+  }
+
+  /* Mode Cetak Laporan Rekap Owner (A4) */
+  body.printing-report .printable-report {
+    display: block !important;
+    width: 100% !important;
+    padding: 20px !important;
+    color: #000000 !important;
+  }
+
+  body.printing-report .app-layout {
+    display: none !important;
+  }
+
+  .report-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-top: 15px !important;
+  }
+
+  .report-table th,
+  .report-table td {
+    border: 1px solid #333333 !important;
+    padding: 8px 10px !important;
+    font-size: 11pt !important;
+  }
+
+  .report-table th {
+    background-color: #f0f0f0 !important;
+  }
+
+  .report-header-kop {
+    text-align: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  .report-signature {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .signature-box {
+    text-align: center;
+    width: 200px;
+  }
+}
+

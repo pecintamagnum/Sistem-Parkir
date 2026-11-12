@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚗 Sistem Informasi Parkir - UKK RPL Paket 2 (Manual Gate Operator)</title>
+  
+  <!-- Favicon Emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚗</text></svg>">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/print.css">
+</head>
+<body>
+
+  <!-- Root Application Container -->
+  <div id="app">
+    <!-- Konten halaman dirender secara dinamis oleh JavaScript Router -->
+    <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: sans-serif; color: #64748b;">
+      <div style="text-align: center;">
+        <div style="font-size: 36px; margin-bottom: 12px; animation: spin 1s infinite linear;">⚙️</div>
+        <p style="font-size: 15px; font-weight: 600;">Memuat Aplikasi Sistem Parkir...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Application Bootstrap Script -->
+  <script type="module">
+    import { router } from './assets/js/router.js';
+    // Jalankan router SPA
+    router.init();
+  </script>
+
+  <style>
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+
+</body>
+</html>
+

@@ -58,6 +58,24 @@ sistem_parkir/
 
 ---
 
+## 🎨 Panduan Memulai Frontend
+
+1. Masuk ke folder frontend:
+   ```bash
+   cd frontend
+   ```
+2. Jalankan server frontend:
+   ```bash
+   node serve.js
+   ```
+   *(Atau jalankan `npm run dev` jika menggunakan Vite)*
+3. Buka browser di:
+   👉 **`http://localhost:3000`** *(atau `http://localhost:5173` jika Vite)*
+4. Dokumentasi lengkap frontend, timeline sprint, dan fitur cetak thermal struk dapat dilihat di:
+   👉 [**frontend/README.md**](frontend/README.md)
+
+---
+
 ## 📘 Dokumentasi API
 Detail endpoint, request body, dan format response dapat dilihat di:
 👉 [**backend/API_DOCUMENTATION.md**](backend/API_DOCUMENTATION.md)
