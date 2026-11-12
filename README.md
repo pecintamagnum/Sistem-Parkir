@@ -1,4 +1,4 @@
-# 🚗 Sistem Parkir - UKK RPL Paket 2
+# 🚗 Sistem Parkir 
 
 Aplikasi Sistem Informasi Parkir Berbasis Petugas (Manual Gate Operator) untuk Uji Kompetensi Keahlian (UKK) Rekayasa Perangkat Lunak 2025/2026 Paket 2.
 
