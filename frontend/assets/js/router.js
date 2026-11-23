@@ -55,10 +55,10 @@ class Router {
     if (!pill) return;
     if (api.isBackendOnline) {
       pill.className = 'status-pill status-pill-online';
-      pill.innerHTML = '<span class="status-dot online"></span> 🟢 API Terhubung (Live)';
+      pill.innerHTML = '<span class="status-dot online"></span> 🟢 Sistem Online (Live API)';
     } else {
       pill.className = 'status-pill status-pill-offline';
-      pill.innerHTML = '<span class="status-dot offline"></span> 🟡 Mode Simulasi (Offline)';
+      pill.innerHTML = '<span class="status-dot offline"></span> 🔴 Backend Terputus';
     }
   }
 
@@ -258,9 +258,9 @@ class Router {
                 <span id="live-clock-text">-:-:- WIB</span>
               </div>
 
-              <!-- Status Pill (Live Backend / Demo Simulation) -->
-              <div id="backend-status-pill" class="status-pill status-pill-offline" title="Klik untuk toggle mode simulasi">
-                <span class="status-dot offline"></span> 🟡 Mode Simulasi
+              <!-- Status Pill (Live Backend Only) -->
+              <div id="backend-status-pill" class="status-pill status-pill-online" title="Status Koneksi Server Backend">
+                <span class="status-dot online"></span> 🟢 Sistem Online (Live API)
               </div>
 
               <!-- Logout Button -->
@@ -299,21 +299,6 @@ class Router {
 
     // Initial pill update
     this.updateStatusPill();
-
-    // Toggle Backend Mode Pill (bisa diklik untuk switch live vs mock mode)
-    document.getElementById('backend-status-pill')?.addEventListener('click', async () => {
-      api.forceMockMode = !api.forceMockMode;
-      if (api.forceMockMode) {
-        api.isBackendOnline = false;
-        store.showToast('Beralih ke MODE SIMULASI (Mock Data).', 'info');
-      } else {
-        await api.checkBackendHealth();
-        store.showToast(api.isBackendOnline ? 'Terhubung kembali ke Live Backend API!' : 'Backend belum online di port 5000.', api.isBackendOnline ? 'success' : 'warning');
-      }
-      this.updateStatusPill();
-      // Reload current page
-      this.handleRouting();
-    });
 
     // Mobile sidebar toggle
     const sidebar = document.getElementById('app-sidebar');
