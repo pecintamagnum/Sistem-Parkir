@@ -467,6 +467,7 @@ const getActiveParkir = async (req, res) => {
     const total = totalRows[0].total;
 
     return sendSuccess(res, 'Daftar kendaraan sedang parkir berhasil diambil.', {
+      transaksi: rows,
       transaksi_aktif: rows,
       pagination: {
         page: parseInt(page, 10),

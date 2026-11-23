@@ -97,7 +97,7 @@ export const monitoringView = {
 
       try {
         const res = await api.getTransaksiAktif({ search, id_area, limit: 100 });
-        const list = (res.data && res.data.transaksi) ? res.data.transaksi : [];
+        const list = (res.data && (res.data.transaksi || res.data.transaksi_aktif)) ? (res.data.transaksi || res.data.transaksi_aktif) : [];
         const countInfo = document.getElementById('monitor-count-info');
         if (countInfo) countInfo.innerText = `Menampilkan ${list.length} kendaraan aktif di dalam area`;
 

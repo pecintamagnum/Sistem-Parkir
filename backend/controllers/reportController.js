@@ -165,6 +165,26 @@ const getDashboardOverview = async (req, res) => {
     const [userCount] = await db.query('SELECT COUNT(*) AS total_user FROM tb_user');
     const [kendaraanCount] = await db.query('SELECT COUNT(*) AS total_kendaraan FROM tb_kendaraan');
 
+    // 5. Transaksi Terkini
+    const [recentRows] = await db.query(`
+      SELECT 
+        t.id_parkir,
+        t.kode_karcis,
+        t.waktu_masuk,
+        t.waktu_keluar,
+        t.durasi_jam,
+        t.biaya_total,
+        t.status,
+        k.plat_nomor,
+        k.jenis_kendaraan,
+        a.nama_area
+      FROM tb_transaksi t
+      JOIN tb_kendaraan k ON t.id_kendaraan = k.id_kendaraan
+      JOIN tb_area_parkir a ON t.id_area = a.id_area
+      ORDER BY t.id_parkir DESC
+      LIMIT 5
+    `);
+
     return sendSuccess(res, 'Data dashboard berhasil diambil.', {
       hari_ini: {
         total_transaksi: parseInt(todayRows[0].total_transaksi_hari_ini, 10),
@@ -178,7 +198,8 @@ const getDashboardOverview = async (req, res) => {
         total_user: parseInt(userCount[0].total_user, 10),
         total_kendaraan: parseInt(kendaraanCount[0].total_kendaraan, 10)
       },
-      status_area: areaRows
+      status_area: areaRows,
+      transaksi_terbaru: recentRows
     });
   } catch (err) {
     console.error('[DASHBOARD ERROR]', err);
