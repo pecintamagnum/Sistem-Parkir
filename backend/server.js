@@ -1,4 +1,5 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 const express = require('express');
 const cors = require('cors');
 const apiRoutes = require('./routes/index');
@@ -20,16 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 // Rute Utama API
 app.use('/api', apiRoutes);
 
-// Root Welcome Route
-app.get('/', (req, res) => {
-  res.send(`
-    <div style="font-family: sans-serif; text-align: center; padding-top: 50px;">
-      <h1>🚗 API Sistem Parkir Aktif</h1>
-      <p>Backend Express.js + MySQL siap digunakan untuk UKK RPL Paket 2.</p>
-      <p>Silakan akses endpoint <code><a href="/api">/api</a></code>.</p>
-    </div>
-  `);
-});
+// Sajikan file static frontend (opsional jika dibuka langsung di port 5000)
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Error Handling Middlewares
 app.use(notFoundHandler);

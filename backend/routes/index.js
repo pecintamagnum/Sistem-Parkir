@@ -20,6 +20,15 @@ router.get('/', (req, res) => {
   });
 });
 
+// Health check endpoint
+router.get('/health', (req, res) => {
+  res.json({
+    status: 'online',
+    app: 'Sistem Parkir API (UKK RPL 2025/2026)',
+    version: '1.0.0'
+  });
+});
+
 // Daftarkan Module Routes
 router.use('/auth', authRoutes);
 router.use('/users', userRoutes);

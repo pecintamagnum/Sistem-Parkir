@@ -18,7 +18,7 @@ class ApiService {
     try {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 2000);
-      const res = await fetch(`${this.baseUrl}/reports/dashboard`, {
+      const res = await fetch(`${this.baseUrl}/health`, {
         signal: controller.signal
       });
       clearTimeout(timeoutId);

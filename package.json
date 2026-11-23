@@ -1,0 +1,21 @@
+{
+  "name": "sistem-parkir-fullstack",
+  "version": "1.0.0",
+  "description": "Aplikasi Sistem Informasi Parkir (UKK RPL Paket 2) - Fullstack JavaScript",
+  "main": "start.js",
+  "scripts": {
+    "start": "node start.js",
+    "dev": "node start.js",
+    "seed": "cd backend && npm run seed",
+    "backend": "cd backend && npm run dev",
+    "frontend": "node frontend/serve.js"
+  },
+  "keywords": [
+    "sistem-parkir",
+    "ukk-rpl",
+    "express",
+    "mysql"
+  ],
+  "author": "Tim UKK RPL (Backend & Frontend)",
+  "license": "ISC"
+}
