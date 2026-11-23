@@ -94,7 +94,7 @@ INSERT INTO `tb_user` (`id_user`, `nama_lengkap`, `username`, `password`, `role`
 (1, 'Administrator Utama', 'admin', '$2b$10$J44A1XCN3ONI6GBiY8ncyesluMqHT0.QuFO3DjPcf.6QbexKEbrSy', 'admin', 1),
 (2, 'Petugas Loket Gerbang', 'petugas', '$2b$10$dWDyyPhV8MGgAM/wgF/u4ucpdB.ZuwWkQ5spMbjq8jlAVEJrbxhdi', 'petugas', 1),
 (3, 'Owner / Pimpinan', 'owner', '$2b$10$LqrPJBSHMurbwPoAlvSk1.MOXnb/FfWlQOXdyKNtv1pAQ/cfRtTQ2', 'owner', 1)
-ON DUPLICATE KEY UPDATE `username`=`username`;
+ON DUPLICATE KEY UPDATE `password`=VALUES(`password`), `status_aktif`=VALUES(`status_aktif`);
 
 -- Insert Master Tarif
 INSERT INTO `tb_tarif` (`id_tarif`, `jenis_kendaraan`, `tarif_per_jam`) VALUES
