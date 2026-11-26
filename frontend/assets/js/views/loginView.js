@@ -9,11 +9,9 @@ export const loginView = {
           
           <!-- Header Card -->
           <div style="background: linear-gradient(135deg, #2563eb, #1d4ed8); padding: 32px 24px; text-align: center; color: #ffffff;">
-            <div style="width: 56px; height: 56px; background: rgba(255,255,255,0.2); border-radius: 14px; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; backdrop-filter: blur(5px);">
-              🚗
-            </div>
+
             <h1 style="font-size: 22px; font-weight: 800; letter-spacing: -0.02em;">SISTEM PARKIR</h1>
-            <p style="font-size: 13px; opacity: 0.9; margin-top: 4px;">Gerbang Masuk & Keluar Operator Manual (UKK RPL Paket 2)</p>
+            <p style="font-size: 13px; opacity: 0.9; margin-top: 4px;">Gerbang Masuk & Keluar Operator Manual</p>
           </div>
 
           <!-- Form Body -->
